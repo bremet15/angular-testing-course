@@ -16,7 +16,7 @@ describe('CoursesCardListComponent', () => {
     let fixture: ComponentFixture<CoursesCardListComponent>;
     let el: DebugElement;
 
-    beforeEach(waitForAsync(() => {
+        beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             imports: [CoursesModule]
         })

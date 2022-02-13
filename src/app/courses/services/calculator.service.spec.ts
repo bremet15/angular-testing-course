@@ -5,23 +5,25 @@ import {TestBed} from "@angular/core/testing";
 let calculator: CalculatorService,
     loggerSpy: any;
 
-beforeEach( () =>{
-  loggerSpy = jasmine.createSpyObj('LoggerService', ['log']);
 
-  TestBed.configureTestingModule({
-    providers: [
-      CalculatorService,
-      {provide: LoggerService, useValue: loggerSpy}
-    ]
-  })
-
-  calculator = TestBed.inject(CalculatorService);
-
-
-})
 
 
 describe('CalculatorService' , () => {
+
+  beforeEach( () =>{
+    loggerSpy = jasmine.createSpyObj('LoggerService', ['log']);
+
+    TestBed.configureTestingModule({
+      providers: [
+        CalculatorService,
+        {provide: LoggerService, useValue: loggerSpy}
+      ]
+    })
+
+    calculator = TestBed.get(CalculatorService);
+
+
+  })
 
   it('should add two numbers',  () => {
 
